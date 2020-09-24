@@ -1,26 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { FC } from "react";
+import { Flex, theme } from "@chakra-ui/core";
+import { ThemeProvider } from "@chakra-ui/core";
+import "./App.css";
+import SideBar from "./components/SideBar";
+import { MapContext } from "./components/MapContext";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App: FC = () => {
+    return (
+        <ThemeProvider theme={theme}>
+            <Flex>
+                <SideBar />
+                <MapContext />
+            </Flex>
+        </ThemeProvider>
+    );
+};
 
 export default App;
